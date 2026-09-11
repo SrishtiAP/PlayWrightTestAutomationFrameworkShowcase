@@ -1,0 +1,101 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dorangehrm%26oq%3Dorangehrm%26gs_lcrp%3DEgZjaHJvbWUyBggAEEUYOdIBCDgxMjJqMGoyqAIAsAIB%26sourceid%3Dchrome%26ie%3DUTF-8%26sei%3D2Wt1arGIOImihvcPu9O18Q8&q=EgR6rFM8GNrX1dMGIjDuRg8gebm1W0euQeHjMjkSAHGZxcCzI0FnrnIHCyRzDrVVobKVJ8wSioKBqJJqBsgyAVJaAUM');
+  await page.locator('iframe[name="a-xgxt0lgyj8el"]').contentFrame().getByRole('checkbox', { name: 'I\'m not a robot' }).click();
+  await page.locator('iframe[name="c-xgxt0lgyj8el"]').contentFrame().locator('[id="9"]').click();
+  await page.locator('iframe[name="c-xgxt0lgyj8el"]').contentFrame().locator('[id="8"]').click();
+  await page.locator('iframe[name="c-xgxt0lgyj8el"]').contentFrame().locator('[id="10"]').click();
+  await page.locator('iframe[name="c-xgxt0lgyj8el"]').contentFrame().locator('[id="12"]').click();
+  await page.locator('iframe[name="c-xgxt0lgyj8el"]').contentFrame().locator('[id="13"]').click();
+  await page.locator('iframe[name="c-xgxt0lgyj8el"]').contentFrame().locator('[id="14"]').click();
+  await page.locator('iframe[name="c-xgxt0lgyj8el"]').contentFrame().getByRole('button', { name: 'Verify' }).click();
+  await page.getByRole('link', { name: 'OrangeHRM OrangeHRM https://' }).click();
+  await page.getByRole('textbox', { name: 'Username' }).click();
+  await page.getByRole('textbox', { name: 'Username' }).fill('Admin');
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill('admin123');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.getByRole('link', { name: 'PIM' }).click();
+  await page.getByRole('link', { name: 'Add Employee' }).click();
+  await page.getByRole('textbox', { name: 'First Name' }).click();
+  await page.getByRole('textbox', { name: 'First Name' }).fill('Sansa');
+  await page.getByRole('textbox', { name: 'Last Name' }).click();
+  await page.getByRole('textbox', { name: 'Last Name' }).fill('parse');
+  await page.getByRole('textbox').nth(4).click();
+  await page.getByRole('textbox').nth(4).fill('0540');
+  await page.getByRole('button', { name: 'Save' }).click();
+  await page.getByRole('link', { name: 'Add Employee' }).click();
+  await page.getByRole('link', { name: 'Employee List' }).click();
+  await page.getByRole('textbox', { name: 'Type for hints...' }).first().click();
+  await page.getByRole('textbox', { name: 'Type for hints...' }).first().fill('sansa parse');
+  await page.getByRole('textbox', { name: 'Type for hints...' }).first().press('Enter');
+  await page.getByRole('button', { name: 'Search' }).click();
+  await page.getByRole('button').filter({ hasText: /^$/ }).nth(3).click();
+  await page.locator('div:nth-child(2) > .oxd-input-group > div:nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon').first().click();
+  await page.getByRole('option', { name: 'Single' }).click();
+  await page.locator('div:nth-child(5) > div:nth-child(2) > div > .oxd-input-group > div:nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-icon').click();
+  await page.locator('.oxd-icon.bi-caret-down-fill.oxd-icon-button__icon').first().click();
+  await page.getByRole('menu').getByText('August').click();
+  await page.locator('.oxd-calendar-selector-year-selected > .oxd-icon').click();
+  await page.getByText('1996').click();
+  await page.getByText('26', { exact: true }).click();
+  await page.locator('form').filter({ hasText: 'Employee Full NameEmployee' }).getByRole('button').click();
+  await page.locator('form').filter({ hasText: 'Blood Type-- Select --Class' }).getByRole('button').click();
+  await page.getByRole('link', { name: 'Employee List' }).click();
+  await page.getByRole('textbox', { name: 'Type for hints...' }).first().click();
+  await page.getByRole('textbox', { name: 'Type for hints...' }).first().fill('sansa parse');
+  await page.getByRole('button', { name: 'Search' }).click();
+  await page.getByRole('button').filter({ hasText: /^$/ }).nth(4).click();
+  await page.getByRole('button', { name: ' Yes, Delete' }).click();
+
+  await page.locator('form').filter({ hasText: 'Employee Full' }).getByRole('button').click();
+  await page.getByRole('button', { name: 'Save' }).click();
+  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/430');
+
+await page.getByText('-- Select --').click();
+await page.getByRole('option', { name: 'Automaton Tester' }).click();
+await page.getByRole('textbox', { name: 'Type for hints...' }).click();
+await page.getByRole('textbox', { name: 'Type for hints...' }).fill('manda user');
+await page.getByRole('textbox', { name: 'Type for hints...' }).press('ArrowDown');
+await page.getByRole('textbox', { name: 'Type for hints...' }).press('Enter');
+await page.getByRole('button', { name: 'Save' }).click();
+await page.getByRole('link', { name: 'Candidates' }).click();
+await page.locator('.oxd-icon.bi-caret-down-fill.oxd-select-text--arrow').first().click();
+await page.getByText('Automaton Tester').click();
+await page.getByRole('button', { name: 'Search' }).click();
+await page.locator('.oxd-icon.bi-caret-down-fill.oxd-select-text--arrow').first().click();
+await page.getByRole('option', { name: 'Automaton Tester' }).click();
+await page.locator('div:nth-child(3) > .oxd-input-group > div:nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon').click();
+await page.getByRole('listbox').getByText('manda user').click();
+await page.getByRole('button', { name: 'Search' }).click();
+await page.getByRole('button', { name: 'Search' }).click();
+await page.locator('div').filter({ hasText: /^-- Select --$/ }).nth(2).click();
+await page.locator('form i').click();
+await page.getByText('-- Select --').click();
+await page.getByRole('option', { name: 'Automaton Tester' }).click();
+await page.locator('.oxd-icon.bi-caret-down-fill.oxd-select-text--arrow').first().click();
+await page.getByRole('option', { name: 'Automaton Tester' }).click();
+await page.locator('div:nth-child(2) > .oxd-input-group > div:nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon').click();
+await page.getByRole('option', { name: 'Payroll Administrator' }).click();
+await page.getByRole('button', { name: 'Search' }).click();
+
+await page.getByRole('button').filter({ hasText: /^$/ }).nth(4).click();
+
+
+await page.getByRole('textbox').nth(4).click();
+await page.getByRole('textbox').nth(4).fill('2');
+await page.getByRole('button', { name: 'Save' }).click();
+await page.getByRole('button', { name: 'Save' }).click();
+await page.getByRole('link', { name: 'Vacancies' }).click();
+await page.locator('.oxd-icon.bi-caret-down-fill.oxd-select-text--arrow').first().click();
+await page.getByRole('option', { name: 'Automaton Tester' }).click();
+await page.getByRole('button', { name: 'Search' }).click();
+await page.getByRole('button').filter({ hasText: /^$/ }).nth(3).click();
+await page.getByRole('button', { name: ' Yes, Delete' }).click();
+
+await page.getByText('Vacancy Name').click();
+await page.getByRole('heading', { name: 'Edit Vacancy' }).click();
+await page.getByRole('link', { name: 'Vacancies' }).click();
+});
+
